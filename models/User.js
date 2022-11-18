@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 // email validator
 const validEmail = (email) => {
@@ -6,7 +6,8 @@ const validEmail = (email) => {
     return emailRegex.test(email);
 }
 
-const userSchema = new mongoose.Schema({
+// user schema
+const userSchema = new Schema({
     username: {
         type: String,
         unique: true,
@@ -20,11 +21,11 @@ const userSchema = new mongoose.Schema({
         validate: validEmail,
     },
     thoughts: [{
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'Thought',
     }],
     friends: [{
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'User',
     }],
     },
@@ -36,11 +37,11 @@ const userSchema = new mongoose.Schema({
     }
 );
 
+// virtual that retrieves the length of the user's friends array field on query
 userSchema.virtual('friendCount').get(function() {
     return this.friends.length;
 });
 
-// does mongoose need to be defined before model? come back to this
-const User = mongoose.model('User', userSchema);
+const User = model('User', userSchema);
 
 module.exports = User;
