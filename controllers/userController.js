@@ -59,10 +59,36 @@ module.exports = {
     },
     // add a user to friend list
     addFriend(req, res) {
-
+        User.findOneAndUpdate(
+            { _id: req.params.userId },
+            { $addToSet: {friends: { _id: req.params.friendId }}},
+            { runValidators: true, new: true})
+            .then((user) => {
+                if(!user) {
+                    res.status(404).json({ message: 'No user found with this id'})
+                } else {
+                    res.json(user)
+                }
+            })
+            .catch((err) => {
+                res.status(500).json(err);
+            });
     },
     // delete a user from friend list
     deleteFriend(req, res) {
-
-    }
+        User.findOneAndUpdate(
+            { _id: req.params.userId },
+            { $pull: { friends: req.params.friendId }}
+        )
+        .then((user) => {
+            if(!user) {
+                res.status(404).json({ message: 'No user with this id' })
+            } else {
+                res.json(user)
+            }
+        })
+        .catch((err) => {
+            res.status(500).json(err);
+        });
+    },
 };
