@@ -20,6 +20,10 @@ When API POST and DELETE routes are tested in Insomnia, the user is able to succ
 ## Mock-Up Video 
 
 
+https://user-images.githubusercontent.com/107455470/203157873-d5cd179c-7e27-4151-8eb3-51815ade3cee.mp4
+
+
+
 ## Contact
 
 If you have any questions, feel free to reach out!
