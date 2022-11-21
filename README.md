@@ -38,7 +38,7 @@ In addition to this, your walkthrough video should show the POST and DELETE rout
 
 If you have any questions, feel free to reach out!
 
-Email: michellehales93@gmail.com 
-GitHub: https://github.com/mich-hales 
+Email: michellehales93@gmail.com  
+GitHub: https://github.com/mich-hales  
 GitHub Repository: https://github.com/mich-hales/social-network-api
 
