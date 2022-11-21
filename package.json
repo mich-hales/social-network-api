@@ -1,12 +1,11 @@
 {
-  "name": "social-network-api",
+  "name": "spectacular-social-network-api",
   "version": "1.0.0",
   "description": "A social network API that runs CRUD operations using MongoDB",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -21,10 +20,6 @@
   "homepage": "https://github.com/mich-hales/social-network-api#readme",
   "dependencies": {
     "express": "^4.18.2",
-    "mongodb": "^4.12.0",
     "mongoose": "^6.7.2"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.20"
   }
 }
